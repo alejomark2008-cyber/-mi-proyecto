@@ -4,15 +4,14 @@
 <head>
 
 <meta charset="UTF-8">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>ArCompra | Compara precios</title>
+<title>ArCompra | Compara y ahorra</title>
 
 <style>
 
 /* =========================
-   ESTILOS GENERALES
+   DISEÑO GENERAL
 ========================= */
 
 * {
@@ -28,53 +27,22 @@ html {
 
 body {
   min-height: 100vh;
-  color: #111111;
-
-  /* Fondo dividido en rojo, blanco,
-     naranja y amarillo */
+  color: #111;
 
   background:
   linear-gradient(
     90deg,
     #df1f26 0%,
     #df1f26 25%,
-
     #ffffff 25%,
     #ffffff 50%,
-
     #f47b20 50%,
     #f47b20 75%,
-
     #ffd21f 75%,
     #ffd21f 100%
   );
 
   background-attachment: fixed;
-}
-
-/* Capa suave sobre los colores */
-
-body::before {
-  content: "";
-
-  position: fixed;
-
-  top: 0;
-  left: 0;
-
-  width: 100%;
-  height: 100%;
-
-  background:
-  linear-gradient(
-    to top,
-    rgba(255,255,255,0.08),
-    rgba(255,255,255,0.30)
-  );
-
-  pointer-events: none;
-
-  z-index: -1;
 }
 
 
@@ -83,64 +51,29 @@ body::before {
 ========================= */
 
 header {
-
-  background:
-  linear-gradient(
-    135deg,
-    #000000,
-    #1b1b1b
-  );
-
+  background: linear-gradient(135deg, #000000, #202020);
   color: white;
-
   text-align: center;
-
-  padding:
-  65px 20px
-  105px;
-
-  border-bottom:
-  6px solid
-  #f47b20;
-
-  box-shadow:
-  0 10px 30px
-  rgba(0,0,0,0.40);
-
+  padding: 65px 20px 105px;
+  border-bottom: 6px solid #f47b20;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.4);
 }
 
 .logo {
-
   font-size: 48px;
-
   font-weight: 900;
-
-  letter-spacing:
-  -2px;
-
-  margin-bottom:
-  15px;
-
+  letter-spacing: -2px;
+  margin-bottom: 15px;
 }
 
 .logo span {
-
-  color:
-  #ffd21f;
-
+  color: #ffd21f;
 }
 
 header p {
-
-  font-size:
-  18px;
-
-  line-height:
-  1.6;
-
-  color:
-  #f5f5f5;
-
+  font-size: 18px;
+  line-height: 1.6;
+  color: #f5f5f5;
 }
 
 
@@ -149,109 +82,40 @@ header p {
 ========================= */
 
 .contenedor-buscador {
-
-  width:
-  92%;
-
-  max-width:
-  760px;
-
-  margin:
-  -48px auto
-  35px;
-
-  position:
-  relative;
-
-  z-index:
-  10;
-
+  width: 92%;
+  max-width: 760px;
+  margin: -48px auto 35px;
+  position: relative;
+  z-index: 10;
 }
 
 .buscador {
-
-  display:
-  flex;
-
-  gap:
-  10px;
-
-  padding:
-  10px;
-
-  background:
-  rgba(
-    255,
-    255,
-    255,
-    0.98
-  );
-
-  border:
-  4px solid
-  #000000;
-
-  border-radius:
-  23px;
-
-  box-shadow:
-  0 15px 35px
-  rgba(
-    0,
-    0,
-    0,
-    0.30
-  );
-
+  display: flex;
+  gap: 10px;
+  padding: 10px;
+  background: white;
+  border: 4px solid black;
+  border-radius: 23px;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.3);
 }
 
 .buscador input {
-
-  flex:
-  1;
-
-  border:
-  none;
-
-  outline:
-  none;
-
-  padding:
-  18px;
-
-  font-size:
-  17px;
-
-  color:
-  #111111;
-
-  background:
-  transparent;
-
+  flex: 1;
+  border: none;
+  outline: none;
+  padding: 18px;
+  font-size: 17px;
+  color: black;
 }
 
 .buscador button {
-
-  border:
-  none;
-
-  border-radius:
-  15px;
-
-  padding:
-  15px 26px;
-
-  font-size:
-  16px;
-
-  font-weight:
-  bold;
-
-  color:
-  white;
-
-  cursor:
-  pointer;
+  border: none;
+  border-radius: 15px;
+  padding: 15px 26px;
+  font-size: 16px;
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
 
   background:
   linear-gradient(
@@ -260,170 +124,76 @@ header p {
     #f47b20
   );
 
-  box-shadow:
-  0 5px 12px
-  rgba(
-    223,
-    31,
-    38,
-    0.30
-  );
-
-  transition:
-  0.2s;
-
+  transition: 0.2s;
 }
 
 .buscador button:hover {
-
-  transform:
-  translateY(
-    -2px
-  );
-
+  transform: translateY(-2px);
 }
 
 .buscador button:active {
-
-  transform:
-  scale(
-    0.96
-  );
-
+  transform: scale(0.96);
 }
 
 
 /* =========================
-   PRODUCTOS SUGERIDOS
+   SUGERENCIAS
 ========================= */
 
 .sugerencias {
-
-  margin-top:
-  20px;
-
-  padding:
-  18px;
-
-  background:
-  rgba(
-    0,
-    0,
-    0,
-    0.90
-  );
-
-  border:
-  3px solid
-  white;
-
-  border-radius:
-  20px;
-
-  text-align:
-  center;
-
-  color:
-  white;
-
-  box-shadow:
-  0 10px 25px
-  rgba(
-    0,
-    0,
-    0,
-    0.25
-  );
-
+  margin-top: 20px;
+  padding: 18px;
+  background: rgba(0,0,0,0.92);
+  border: 3px solid white;
+  border-radius: 20px;
+  text-align: center;
+  color: white;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.25);
 }
 
 .sugerencias p {
-
-  margin-bottom:
-  10px;
-
-  font-weight:
-  bold;
-
+  margin-bottom: 10px;
+  font-weight: bold;
 }
 
 .sugerencias span {
-
-  display:
-  inline-block;
-
-  margin:
-  5px;
-
-  padding:
-  9px 14px;
-
-  border-radius:
-  22px;
-
-  background:
-  white;
-
-  color:
-  black;
-
-  font-weight:
-  bold;
-
-  cursor:
-  pointer;
-
-  transition:
-  0.2s;
-
+  display: inline-block;
+  margin: 5px;
+  padding: 9px 14px;
+  border-radius: 22px;
+  background: white;
+  color: black;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.2s;
 }
 
 .sugerencias span:hover {
-
-  background:
-  #ffd21f;
-
-  transform:
-  translateY(
-    -2px
-  );
-
+  background: #ffd21f;
+  transform: translateY(-2px);
 }
 
 
 /* =========================
-   RESULTADOS
+   CAJA DE RESULTADOS
 ========================= */
 
 #resultados {
-
-  width:
-  92%;
-
-  max-width:
-  1120px;
-
-  margin:
-  30px auto
-  65px;
-
-  padding:
-  28px;
+  width: 92%;
+  max-width: 1120px;
+  margin: 30px auto 65px;
+  padding: 28px;
 
   background:
   rgba(
     255,
     255,
     255,
-    0.95
+    0.96
   );
 
-  border:
-  4px solid
-  #000000;
-
-  border-radius:
-  27px;
+  border: 4px solid black;
+  border-radius: 27px;
 
   box-shadow:
   0 18px 40px
@@ -431,9 +201,8 @@ header p {
     0,
     0,
     0,
-    0.30
+    0.3
   );
-
 }
 
 
@@ -442,114 +211,61 @@ header p {
 ========================= */
 
 .mensaje-inicial {
-
-  text-align:
-  center;
-
-  padding:
-  55px 20px;
-
+  text-align: center;
+  padding: 55px 20px;
 }
 
 .mensaje-inicial h2 {
-
-  font-size:
-  35px;
-
-  margin-bottom:
-  15px;
-
-  color:
-  #111111;
-
+  font-size: 35px;
+  margin-bottom: 15px;
 }
 
 .linea-colores {
-
-  width:
-  160px;
-
-  height:
-  8px;
-
-  margin:
-  15px auto
-  20px;
-
-  border-radius:
-  10px;
+  width: 170px;
+  height: 9px;
+  margin: 15px auto 20px;
+  border-radius: 10px;
 
   background:
   linear-gradient(
     90deg,
     #df1f26 0%,
     #df1f26 25%,
-
-    #ffffff 25%,
-    #ffffff 50%,
-
+    white 25%,
+    white 50%,
     #f47b20 50%,
     #f47b20 75%,
-
     #ffd21f 75%,
     #ffd21f 100%
   );
 
-  border:
-  1px solid
-  #cccccc;
-
+  border: 1px solid #999;
 }
 
 .mensaje-inicial p {
-
-  font-size:
-  17px;
-
-  line-height:
-  1.7;
-
-  color:
-  #475569;
-
+  font-size: 17px;
+  line-height: 1.7;
+  color: #475569;
 }
 
 
 /* =========================
-   TÍTULO DEL PRODUCTO
+   TÍTULO DEL RESULTADO
 ========================= */
 
 .titulo-producto {
-
-  text-align:
-  center;
-
-  margin-bottom:
-  30px;
-
+  text-align: center;
+  margin-bottom: 30px;
 }
 
 .titulo-producto h2 {
-
-  font-size:
-  34px;
-
-  color:
-  #111111;
-
-  text-transform:
-  capitalize;
-
+  font-size: 34px;
+  text-transform: capitalize;
 }
 
 .titulo-producto p {
-
-  margin-top:
-  10px;
-
-  color:
-  #475569;
-
+  margin-top: 10px;
+  color: #475569;
 }
 
 
@@ -558,38 +274,22 @@ header p {
 ========================= */
 
 .supermercados {
-
-  display:
-  grid;
+  display: grid;
 
   grid-template-columns:
   repeat(
     auto-fit,
-    minmax(
-      220px,
-      1fr
-    )
+    minmax(220px, 1fr)
   );
 
-  gap:
-  20px;
-
+  gap: 20px;
 }
 
 .supermercado {
-
-  background:
-  white;
-
-  border:
-  3px solid
-  #111111;
-
-  border-radius:
-  21px;
-
-  padding:
-  20px;
+  background: white;
+  border: 3px solid black;
+  border-radius: 21px;
+  padding: 20px;
 
   box-shadow:
   0 8px 20px
@@ -600,92 +300,45 @@ header p {
     0.13
   );
 
-  transition:
-  0.2s;
-
+  transition: 0.2s;
 }
 
 .supermercado:hover {
-
-  transform:
-  translateY(
-    -5px
-  );
-
+  transform: translateY(-5px);
 }
 
 .supermercado h3 {
-
-  text-align:
-  center;
-
-  font-size:
-  25px;
-
-  padding-bottom:
-  15px;
-
-  border-bottom:
-  5px solid
-  #f47b20;
-
+  text-align: center;
+  font-size: 25px;
+  padding-bottom: 15px;
+  border-bottom: 5px solid #f47b20;
 }
 
 .producto {
-
-  padding:
-  17px 0;
-
-  border-bottom:
-  1px solid
-  #d1d5db;
-
+  padding: 17px 0;
+  border-bottom: 1px solid #d1d5db;
 }
 
 .producto:last-child {
-
-  border-bottom:
-  none;
-
+  border-bottom: none;
 }
 
 .producto h4 {
-
-  font-size:
-  17px;
-
-  margin-bottom:
-  7px;
-
+  font-size: 17px;
+  margin-bottom: 7px;
 }
 
 .producto p {
-
-  font-size:
-  14px;
-
-  color:
-  #64748b;
-
+  font-size: 14px;
+  color: #64748b;
 }
 
 .precio {
-
-  display:
-  block;
-
-  font-size:
-  22px;
-
-  font-weight:
-  900;
-
-  color:
-  #df1f26;
-
-  margin-top:
-  9px;
-
+  display: block;
+  font-size: 22px;
+  font-weight: 900;
+  color: #df1f26;
+  margin-top: 9px;
 }
 
 
@@ -694,29 +347,16 @@ header p {
 ========================= */
 
 .mejor-precio {
+  max-width: 720px;
+  margin: 38px auto 5px;
+  padding: 27px;
 
-  max-width:
-  720px;
+  text-align: center;
 
-  margin:
-  38px auto
-  5px;
+  color: black;
 
-  padding:
-  27px;
-
-  text-align:
-  center;
-
-  color:
-  black;
-
-  border:
-  4px solid
-  black;
-
-  border-radius:
-  23px;
+  border: 4px solid black;
+  border-radius: 23px;
 
   background:
   linear-gradient(
@@ -731,74 +371,41 @@ header p {
     0,
     0,
     0,
-    0.20
+    0.2
   );
-
 }
 
 .mejor-precio h2 {
-
-  font-size:
-  27px;
-
-  margin-bottom:
-  12px;
-
+  font-size: 27px;
+  margin-bottom: 12px;
 }
 
 .mejor-precio p {
-
-  font-size:
-  18px;
-
-  line-height:
-  1.7;
-
+  font-size: 18px;
+  line-height: 1.7;
 }
 
 
 /* =========================
-   PRODUCTO NO ENCONTRADO
+   ERROR
 ========================= */
 
 .error {
-
-  text-align:
-  center;
-
-  padding:
-  48px 20px;
-
-  background:
-  white;
-
-  border:
-  4px solid
-  #df1f26;
-
-  border-radius:
-  22px;
-
+  text-align: center;
+  padding: 48px 20px;
+  background: white;
+  border: 4px solid #df1f26;
+  border-radius: 22px;
 }
 
 .error h2 {
-
-  margin-bottom:
-  13px;
-
-  color:
-  #df1f26;
-
+  margin-bottom: 13px;
+  color: #df1f26;
 }
 
 .error p {
-
-  line-height:
-  1.7;
-
-  color:
-  #475569;
-
+  line-height: 1.7;
+  color: #475569;
 }
 
 
@@ -807,45 +414,41 @@ header p {
 ========================= */
 
 footer {
-
-  background:
-  #000000;
-
-  color:
-  white;
-
-  text-align:
-  center;
-
-  padding:
-  38px 20px;
-
-  border-top:
-  6px solid
-  #df1f26;
-
+  background: black;
+  color: white;
+  text-align: center;
+  padding: 38px 20px;
+  border-top: 6px solid #df1f26;
 }
 
 footer h3 {
-
-  font-size:
-  27px;
-
+  font-size: 27px;
 }
 
 footer p {
+  margin-top: 10px;
+  color: #d1d5db;
+}
 
-  margin-top:
-  10px;
+.creditos {
+  margin-top: 25px;
+  padding-top: 18px;
 
-  color:
-  #d1d5db;
+  border-top:
+  1px solid #555;
 
+  color: white;
+
+  font-size: 16px;
+}
+
+.creditos strong {
+  color: #ffd21f;
 }
 
 
 /* =========================
-   DISEÑO PARA CELULAR
+   CELULAR
 ========================= */
 
 @media (
@@ -853,59 +456,35 @@ footer p {
 ) {
 
   header {
-
-    padding-top:
-    55px;
-
+    padding-top: 55px;
   }
 
   .logo {
-
-    font-size:
-    39px;
-
+    font-size: 39px;
   }
 
   header p {
-
-    font-size:
-    16px;
-
+    font-size: 16px;
   }
 
   .buscador {
-
-    flex-direction:
-    column;
-
+    flex-direction: column;
   }
 
   .buscador button {
-
-    width:
-    100%;
-
+    width: 100%;
   }
 
   #resultados {
-
-    padding:
-    18px;
-
+    padding: 18px;
   }
 
   .mensaje-inicial h2 {
-
-    font-size:
-    29px;
-
+    font-size: 29px;
   }
 
   .titulo-producto h2 {
-
-    font-size:
-    28px;
-
+    font-size: 28px;
   }
 
 }
@@ -918,9 +497,7 @@ footer p {
 <body>
 
 
-<!-- =========================
-     ENCABEZADO
-========================= -->
+<!-- ENCABEZADO -->
 
 <header>
 
@@ -943,9 +520,7 @@ y encuentra dónde comprar más barato.
 </header>
 
 
-<!-- =========================
-     BUSCADOR
-========================= -->
+<!-- BUSCADOR -->
 
 <div class="contenedor-buscador">
 
@@ -972,9 +547,7 @@ onkeydown="siEnter(event)"
 </div>
 
 
-<!-- =========================
-     SUGERENCIAS
-========================= -->
+<!-- PRODUCTOS SUGERIDOS -->
 
 <div class="sugerencias">
 
@@ -1049,9 +622,7 @@ Café
 </div>
 
 
-<!-- =========================
-     RESULTADOS
-========================= -->
+<!-- RESULTADOS -->
 
 <main id="resultados">
 
@@ -1084,9 +655,7 @@ D1, Éxito, OXXO y Ara.
 </main>
 
 
-<!-- =========================
-     PIE DE PÁGINA
-========================= -->
+<!-- PIE -->
 
 <footer>
 
@@ -1108,6 +677,18 @@ Prototipo con precios aproximados.
 
 </p>
 
+<p class="creditos">
+
+Diseñado y desarrollado por
+
+<strong>
+
+Alejandro Romero
+
+</strong>
+
+</p>
+
 </footer>
 
 
@@ -1115,417 +696,267 @@ Prototipo con precios aproximados.
 
 
 /* =========================
-   BASE DE DATOS
+   PRODUCTOS
 ========================= */
 
 const productos = {
-
-
-/* ARROZ */
 
 arroz: {
 
 nombre: "Arroz",
 
 d1: [
-
 ["Arroz Diana", "1 kg", 4990],
-
 ["Arroz Roa", "1 kg", 5290]
-
 ],
 
 exito: [
-
 ["Arroz Diana", "1 kg", 5890],
-
 ["Arroz Roa", "1 kg", 6190]
-
 ],
 
 oxxo: [
-
 ["Arroz Diana", "1 kg", 6490],
-
 ["Arroz Flor Huila", "1 kg", 6990]
-
 ],
 
 ara: [
-
 ["Arroz Roa", "1 kg", 5090],
-
 ["Arroz Diana", "1 kg", 5490]
-
 ]
 
 },
-
-
-/* COCA-COLA */
 
 "coca cola": {
 
 nombre: "Coca-Cola",
 
 d1: [
-
 ["Coca-Cola Original", "1,5 litros", 6900],
-
 ["Coca-Cola Sin Azúcar", "1,5 litros", 6990]
-
 ],
 
 exito: [
-
 ["Coca-Cola Original", "1,5 litros", 7900],
-
 ["Coca-Cola Sin Azúcar", "1,5 litros", 7990]
-
 ],
 
 oxxo: [
-
 ["Coca-Cola Original", "1,5 litros", 8500],
-
 ["Coca-Cola Sin Azúcar", "1,5 litros", 8700]
-
 ],
 
 ara: [
-
 ["Coca-Cola Original", "1,5 litros", 7200],
-
 ["Coca-Cola Sin Azúcar", "1,5 litros", 7350]
-
 ]
 
 },
-
-
-/* HARINA */
 
 harina: {
 
 nombre: "Harina",
 
 d1: [
-
 ["Harina de Maíz", "1 kg", 3900],
-
 ["Harina de Trigo", "1 kg", 4200]
-
 ],
 
 exito: [
-
 ["Harina PAN", "1 kg", 6100],
-
 ["Harina Haz de Oros", "1 kg", 5900]
-
 ],
 
 oxxo: [
-
 ["Harina PAN", "1 kg", 6900],
-
 ["Harina de Trigo", "1 kg", 5800]
-
 ],
 
 ara: [
-
 ["Harina de Maíz", "1 kg", 4100],
-
 ["Harina PAN", "1 kg", 5700]
-
 ]
 
 },
-
-
-/* PASTA */
 
 pasta: {
 
 nombre: "Pasta",
 
 d1: [
-
 ["Pasta Doria", "500 g", 3900],
-
 ["Pasta La Muñeca", "500 g", 4100]
-
 ],
 
 exito: [
-
 ["Pasta Doria", "500 g", 4700],
-
 ["Pasta La Muñeca", "500 g", 4900]
-
 ],
 
 oxxo: [
-
 ["Pasta Doria", "500 g", 5200],
-
 ["Pasta Barilla", "500 g", 7900]
-
 ],
 
 ara: [
-
 ["Pasta La Muñeca", "500 g", 4000],
-
 ["Pasta Doria", "500 g", 4300]
-
 ]
 
 },
-
-
-/* ATÚN */
 
 atun: {
 
 nombre: "Atún",
 
 d1: [
-
 ["Atún en Agua", "170 g", 5600],
-
 ["Atún en Aceite", "170 g", 5900]
-
 ],
 
 exito: [
-
 ["Atún Van Camps", "170 g", 7200],
-
 ["Atún Isabel", "170 g", 7500]
-
 ],
 
 oxxo: [
-
 ["Atún Van Camps", "170 g", 7900],
-
 ["Atún Isabel", "170 g", 8200]
-
 ],
 
 ara: [
-
 ["Atún en Agua", "170 g", 5900],
-
 ["Atún en Aceite", "170 g", 6200]
-
 ]
 
 },
-
-
-/* LECHE */
 
 leche: {
 
 nombre: "Leche",
 
 d1: [
-
 ["Leche Entera", "1 litro", 4200],
-
 ["Leche Deslactosada", "1 litro", 4600]
-
 ],
 
 exito: [
-
 ["Leche Alquería", "1 litro", 5200],
-
 ["Leche Colanta", "1 litro", 5400]
-
 ],
 
 oxxo: [
-
 ["Leche Alquería", "1 litro", 5900],
-
 ["Leche Colanta", "1 litro", 6100]
-
 ],
 
 ara: [
-
 ["Leche Entera", "1 litro", 4300],
-
 ["Leche Deslactosada", "1 litro", 4700]
-
 ]
 
 },
-
-
-/* HUEVOS */
 
 huevos: {
 
 nombre: "Huevos",
 
 d1: [
-
 ["Huevos Rojos", "30 unidades", 15900],
-
 ["Huevos Blancos", "30 unidades", 14900]
-
 ],
 
 exito: [
-
 ["Huevos AA", "30 unidades", 18900],
-
 ["Huevos AAA", "30 unidades", 20900]
-
 ],
 
 oxxo: [
-
 ["Huevos AA", "12 unidades", 9900],
-
 ["Huevos AAA", "12 unidades", 10900]
-
 ],
 
 ara: [
-
 ["Huevos Rojos", "30 unidades", 16500],
-
 ["Huevos Blancos", "30 unidades", 15300]
-
 ]
 
 },
-
-
-/* ACEITE */
 
 aceite: {
 
 nombre: "Aceite",
 
 d1: [
-
 ["Aceite Vegetal", "1 litro", 8500],
-
 ["Aceite de Girasol", "1 litro", 9900]
-
 ],
 
 exito: [
-
 ["Aceite Premier", "1 litro", 11900],
-
 ["Aceite Oleocali", "1 litro", 10900]
-
 ],
 
 oxxo: [
-
 ["Aceite Premier", "1 litro", 12900],
-
 ["Aceite de Girasol", "1 litro", 11500]
-
 ],
 
 ara: [
-
 ["Aceite Vegetal", "1 litro", 8900],
-
 ["Aceite de Girasol", "1 litro", 10100]
-
 ]
 
 },
-
-
-/* AZÚCAR */
 
 azucar: {
 
 nombre: "Azúcar",
 
 d1: [
-
 ["Azúcar Blanca", "1 kg", 4200],
-
 ["Azúcar Morena", "1 kg", 4700]
-
 ],
 
 exito: [
-
 ["Azúcar Incauca", "1 kg", 5600],
-
 ["Azúcar Manuelita", "1 kg", 5400]
-
 ],
 
 oxxo: [
-
 ["Azúcar Incauca", "1 kg", 6100],
-
 ["Azúcar Morena", "1 kg", 5800]
-
 ],
 
 ara: [
-
 ["Azúcar Blanca", "1 kg", 4400],
-
 ["Azúcar Morena", "1 kg", 4800]
-
 ]
 
 },
-
-
-/* CAFÉ */
 
 cafe: {
 
 nombre: "Café",
 
 d1: [
-
 ["Café Molido", "250 g", 8900],
-
 ["Café Instantáneo", "100 g", 10500]
-
 ],
 
 exito: [
-
 ["Café Sello Rojo", "250 g", 11900],
-
 ["Café Águila Roja", "250 g", 11500]
-
 ],
 
 oxxo: [
-
 ["Café Sello Rojo", "250 g", 12900],
-
 ["Café Águila Roja", "250 g", 12500]
-
 ],
 
 ara: [
-
 ["Café Molido", "250 g", 9200],
-
 ["Café Instantáneo", "100 g", 10800]
-
 ]
 
 }
@@ -1534,7 +965,7 @@ ara: [
 
 
 /* =========================
-   FORMATO DE PESOS
+   FORMATO DE DINERO
 ========================= */
 
 function dinero(numero) {
@@ -1644,7 +1075,7 @@ texto
 
 
 /* =========================
-   MOSTRAR PRODUCTO
+   MOSTRAR RESULTADOS
 ========================= */
 
 function mostrarProducto(
@@ -1712,8 +1143,6 @@ return;
 }
 
 
-/* MEJOR PRECIO */
-
 let mejor = {
 
 precio:
@@ -1755,8 +1184,6 @@ ara:
 let tarjetas = "";
 
 
-/* CREAR TARJETAS */
-
 for (
 
 let tienda
@@ -1764,7 +1191,6 @@ let tienda
 in producto
 
 ) {
-
 
 if (
 
@@ -1792,16 +1218,13 @@ item
 
 ) {
 
-
 const marca =
 
 item[0];
 
-
 const tamaño =
 
 item[1];
-
 
 const precio =
 
@@ -1820,11 +1243,9 @@ mejor.precio =
 
 precio;
 
-
 mejor.nombre =
 
 marca;
-
 
 mejor.supermercado =
 
@@ -1882,8 +1303,6 @@ ${lista}
 
 }
 
-
-/* MOSTRAR TODO */
 
 resultados.innerHTML = `
 
@@ -1961,7 +1380,7 @@ mejor.precio
 
 
 /* =========================
-   BOTONES DE EJEMPLO
+   BOTONES SUGERIDOS
 ========================= */
 
 function buscarEjemplo(
@@ -1990,12 +1409,6 @@ nombre
 );
 
 
-window.scrollTo(
-
-{
-
-top:
-
 document
 
 .getElementById(
@@ -2004,11 +1417,9 @@ document
 
 )
 
-.offsetTop
+.scrollIntoView(
 
--
-
-20,
+{
 
 behavior:
 
@@ -2048,7 +1459,6 @@ buscar();
 
 </script>
 
-
 </body>
 
-  </html>
+</html>
